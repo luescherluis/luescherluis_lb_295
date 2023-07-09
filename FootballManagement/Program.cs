@@ -1,4 +1,9 @@
+using FootballManagement.Model;
+
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<FussballmannschaftDB>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=FussballmannschaftDB;Trusted_Connection=True"));
 // Add services to the container.
 
 builder.Services.AddControllers();
